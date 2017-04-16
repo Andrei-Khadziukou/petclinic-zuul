@@ -1,1 +1,22 @@
 server.port: 8083
+
+spring.application.name: ZUUL_SERVER
+
+eureka:
+  instance:
+    leaseRenewalInterval: 10
+    leaseExperationDurationinSecond: 20
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8080/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 50
+
+zuul:
+  prefix: /api
+  routes:
+    order-service:
+      paths: /order-service/**
+      serviceId: ORDER_SERVICE
