@@ -17,6 +17,15 @@ eureka:
 zuul:
   prefix: /api
   routes:
-    order-service:
-      paths: /order-service/**
+    orders:
+      paths: /orders/**
       serviceId: ORDER_SERVICE
+    services:
+      path: /services/**
+      serviceId: CLINIC_SERVICE
+    animals:
+      path: /animals/**
+      serviceId: CLINIC_SERVICE
+    clinics:
+      path: /clinics/**
+      serviceId: CLINIC_SERVICE
