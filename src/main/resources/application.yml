@@ -1,6 +1,6 @@
 server.port: 8083
 
-spring.application.name: ZUUL_SERVER
+spring.application.name: ZUUL-SERVER
 
 eureka:
   instance:
@@ -19,13 +19,17 @@ zuul:
   routes:
     orders:
       paths: /orders/**
-      serviceId: ORDER_SERVICE
+      serviceId: ORDER-SERVICE
+      stripPrefix: false
     services:
       path: /services/**
-      serviceId: CLINIC_SERVICE
+      serviceId: CLINIC-SERVICE
+      stripPrefix: false
     animals:
       path: /animals/**
-      serviceId: CLINIC_SERVICE
+      serviceId: CLINIC-SERVICE
+      stripPrefix: false
     clinics:
       path: /clinics/**
-      serviceId: CLINIC_SERVICE
+      serviceId: CLINIC-SERVICE
+      stripPrefix: false
